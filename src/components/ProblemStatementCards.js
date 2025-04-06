@@ -193,10 +193,10 @@ const ProblemStatementCards = () => {
             <div className="mb-3 sm:mb-4">
               <span className="text-3xl sm:text-4xl">{domain.icon}</span>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2 text-left">
               {domain.title}
             </h3>
-            <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6">{domain.description}</p>
+            <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 text-left">{domain.description}</p>
             
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <span className="text-xs sm:text-sm font-medium text-white bg-blue-600/50 backdrop-blur-sm px-3 py-1 sm:px-4 sm:py-1.5 rounded-full shadow-lg shadow-blue-500/30 border border-blue-400/20 animate-pulse">
@@ -249,7 +249,7 @@ const ProblemStatementCards = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
-          <h2 className="text-2xl sm:text-3xl font-bold text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white text-left">
             {selectedDomain.title} Problems
           </h2>
         </div>
@@ -262,11 +262,11 @@ const ProblemStatementCards = () => {
           className="relative overflow-hidden rounded-xl backdrop-blur-sm bg-gradient-to-br from-indigo-900/40 to-purple-900/40 border border-indigo-500/20 mb-6 sm:mb-8"
         >
           <div className="p-4 sm:p-6">
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 flex items-center">
-              <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 flex items-center text-left">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-indigo-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Hackathon Information
+              <span>Hackathon Information</span>
             </h3>
             <div className="h-px w-24 sm:w-32 bg-gradient-to-r from-indigo-500 to-transparent mb-3 sm:mb-4"></div>
             
@@ -278,7 +278,7 @@ const ProblemStatementCards = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <p className="text-gray-300 text-xs sm:text-sm"><span className="text-blue-300 font-medium">Team Size:</span> 3-4 members(only from same department)</p>
+                  <p className="text-gray-300 text-xs sm:text-sm text-left"><span className="text-blue-300 font-medium">Team Size:</span> 3-4 members (only from same department)</p>
                 </div>
                 
                 <div className="flex items-start">
@@ -287,7 +287,7 @@ const ProblemStatementCards = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <p className="text-gray-300 text-xs sm:text-sm"><span className="text-blue-300 font-medium">Selection:</span> Selected teams will advance to main hackathon</p>
+                  <p className="text-gray-300 text-xs sm:text-sm text-left"><span className="text-blue-300 font-medium">Selection:</span> Selected teams will advance to main hackathon</p>
                 </div>
                 
                 <div className="flex items-start">
@@ -296,7 +296,7 @@ const ProblemStatementCards = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <p className="text-gray-300 text-xs sm:text-sm"><span className="text-blue-300 font-medium">Preliminaries:</span> Prototype Presentation is optional</p>
+                  <p className="text-gray-300 text-xs sm:text-sm text-left"><span className="text-blue-300 font-medium">Preliminaries:</span> Prototype presentation is optional in prelims</p>
                 </div>
               </div>
               <div className="space-y-1 sm:space-y-2">
@@ -306,7 +306,7 @@ const ProblemStatementCards = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <p className="text-gray-300 text-xs sm:text-sm"><span className="text-blue-300 font-medium">Presentation:</span> PPT presentation is required</p>
+                  <p className="text-gray-300 text-xs sm:text-sm text-left"><span className="text-blue-300 font-medium">Presentation:</span> PPT presentation is required</p>
                 </div>
                 
                 <div className="flex items-start">
@@ -315,7 +315,7 @@ const ProblemStatementCards = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <p className="text-gray-300 text-xs sm:text-sm"><span className="text-blue-300 font-medium">Refreshments:</span> Food and Refreshments will be provided</p>
+                  <p className="text-gray-300 text-xs sm:text-sm text-left"><span className="text-blue-300 font-medium">Refreshments:</span> Food and refreshments will be provided</p>
                 </div>
                 
                 <div className="flex items-start">
@@ -324,7 +324,7 @@ const ProblemStatementCards = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <p className="text-gray-300 text-xs sm:text-sm"><span className="text-blue-300 font-medium">Judging:</span> Innovation & complexity </p>
+                  <p className="text-gray-300 text-xs sm:text-sm text-left"><span className="text-blue-300 font-medium">Judging:</span> Innovation, functionality & presentation quality</p>
                 </div>
               </div>
             </div>
@@ -339,7 +339,7 @@ const ProblemStatementCards = () => {
                   </div>
                 </div>
                 <div>
-                  <p className="text-pink-300 font-bold text-sm sm:text-lg mb-1">Don't forget to join our whatsapp group</p>
+                  <p className="text-pink-300 font-bold text-sm sm:text-lg mb-1 text-left">For more details, contact our coordinators</p>
                   
                   {/* Domain coordinators */}
                   <div className="flex flex-col gap-2">
@@ -385,34 +385,34 @@ const ProblemStatementCards = () => {
                   <span className="inline-block px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium mb-2 sm:mb-3 bg-blue-600/30 text-blue-200">
                     {problem.id}
                   </span>
-                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2 sm:mb-3">{problem.title}</h4>
+                  <h4 className="text-xl sm:text-2xl font-semibold text-white mb-2 sm:mb-3 text-left">{problem.title}</h4>
                   <div className="h-px w-24 sm:w-32 bg-gradient-to-r from-blue-500 to-transparent mb-3 sm:mb-4"></div>
                   
-                  <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
+                  <div className="space-y-4 sm:space-y-6 mb-4 sm:mb-6">
                     <div>
-                      <h5 className="text-base sm:text-lg font-medium text-blue-300 mb-1 sm:mb-2">Problem Description</h5>
-                      <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{problem.description}</p>
+                      <h5 className="text-base sm:text-lg font-medium text-blue-300 mb-2 sm:mb-3 text-left">Problem Description</h5>
+                      <p className="text-gray-300 text-sm sm:text-base leading-relaxed text-justify md:text-justify">{problem.description}</p>
                     </div>
                     
-                    {/* Objectives Section */}
+                    {/* Enhanced Objectives Section */}
                     {problem.objectives && (
-                      <div className="mt-3 sm:mt-4">
-                        <h5 className="text-base sm:text-lg font-medium text-green-300 mb-2 sm:mb-3 flex items-center">
-                          <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <div className="mt-4 sm:mt-6">
+                        <h5 className="text-base sm:text-lg font-medium text-green-300 mb-3 sm:mb-4 flex items-center text-left">
+                          <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
-                          Objectives
+                          <span>Key Objectives</span>
                         </h5>
-                        <div className="bg-gradient-to-r from-green-900/20 to-blue-900/10 rounded-lg p-3 sm:p-4 border-l-4 border-green-500">
-                          <ul className="space-y-1 sm:space-y-2">
+                        <div className="bg-gradient-to-r from-green-900/30 to-green-900/10 rounded-xl p-4 sm:p-5 border-l-4 border-green-500 shadow-lg shadow-green-900/20">
+                          <ul className="space-y-2.5 sm:space-y-3.5">
                             {problem.objectives.map((objective, index) => (
-                              <li key={index} className="flex items-start">
-                                <div className="flex-shrink-0 h-5 w-5 sm:h-6 sm:w-6 flex items-center justify-center rounded-full bg-green-600/30 mr-2 mt-0.5">
-                                  <svg className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              <li key={index} className="flex items-start group">
+                                <div className="flex-shrink-0 h-6 w-6 sm:h-7 sm:w-7 flex items-center justify-center rounded-full bg-green-600/30 mr-3 mt-0.5 group-hover:bg-green-600/50 transition-colors">
+                                  <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-green-300 group-hover:text-green-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
                                   </svg>
                                 </div>
-                                <span className="text-gray-200 text-xs sm:text-sm">{objective}</span>
+                                <span className="text-gray-200 text-sm sm:text-base font-medium group-hover:text-white transition-colors text-left">{objective}</span>
                               </li>
                             ))}
                           </ul>
@@ -420,45 +420,43 @@ const ProblemStatementCards = () => {
                       </div>
                     )}
                     
-                    {/* Execution Steps Section */}
+                    {/* Enhanced Execution Steps Section */}
                     {problem.execution && (
-                      <div className="mt-3 sm:mt-4">
-                        <h5 className="text-base sm:text-lg font-medium text-orange-300 mb-2 sm:mb-3 flex items-center">
-                          <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <div className="mt-5 sm:mt-7">
+                        <h5 className="text-base sm:text-lg font-medium text-orange-300 mb-3 sm:mb-4 flex items-center text-left">
+                          <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                           </svg>
-                          Execution
+                          <span>Implementation Steps</span>
                         </h5>
-                        <div className="bg-gradient-to-r from-orange-900/20 to-red-900/10 rounded-lg p-3 sm:p-4 border-l-4 border-orange-500">
-                          <ul className="space-y-1 sm:space-y-2">
+                        <div className="bg-gradient-to-r from-orange-900/30 to-orange-900/10 rounded-xl p-4 sm:p-5 border-l-4 border-orange-500 shadow-lg shadow-orange-900/20">
+                          <ol className="space-y-2.5 sm:space-y-3.5">
                             {problem.execution.map((step, index) => (
-                              <li key={index} className="flex items-start">
-                                <div className="flex-shrink-0 h-5 w-5 sm:h-6 sm:w-6 flex items-center justify-center rounded-full bg-orange-600/30 mr-2 mt-0.5">
-                                  <svg className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-orange-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                                  </svg>
+                              <li key={index} className="flex items-start group">
+                                <div className="flex-shrink-0 h-6 w-6 sm:h-7 sm:w-7 flex items-center justify-center rounded-full bg-orange-600/30 mr-3 mt-0.5 group-hover:bg-orange-600/50 transition-colors">
+                                  <span className="text-orange-300 font-semibold text-xs sm:text-sm group-hover:text-orange-200">{index+1}</span>
                                 </div>
-                                <span className="text-gray-200 text-xs sm:text-sm">{step}</span>
+                                <span className="text-gray-200 text-sm sm:text-base font-medium group-hover:text-white transition-colors text-left">{step}</span>
                               </li>
                             ))}
-                          </ul>
+                          </ol>
                         </div>
                       </div>
                     )}
                   </div>
                   
-                  <div className="mt-4 sm:mt-6 flex flex-wrap justify-center sm:justify-start">
+                  <div className="mt-6 sm:mt-8 flex flex-wrap justify-center sm:justify-start">
                     <a 
                       href={REGISTRATION_FORM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full sm:w-auto relative overflow-hidden group px-4 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-full transition duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 mb-3 sm:mb-0 text-sm sm:text-base"
+                      className="w-full sm:w-auto relative overflow-hidden group px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-full transition duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/30 mb-3 sm:mb-0 text-sm sm:text-base flex items-center justify-center"
                     >
                       <span className="relative z-10 flex items-center justify-center">
-                        <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
                         </svg>
-                        Register Now
+                        Register for this Challenge
                       </span>
                       <span className="absolute bottom-0 left-0 w-full h-1 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                     </a>
