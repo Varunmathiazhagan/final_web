@@ -58,7 +58,7 @@ const ProblemStatementCards = () => {
       ]
     },
     {
-      id: 'cybersecurity',
+      id: 'cyber security',
       title: 'Cybersecurity',
       description: 'Protecting digital assets in an increasingly connected world',
       icon: '🛡️',
