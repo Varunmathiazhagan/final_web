@@ -16,20 +16,20 @@ const REGISTRATION_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSel4QGgW
 // Domain coordinators
 const domainCoordinators = {
   ai: [
-    { name: 'Mithra', phone: '+91 7010437916' },
-    { name: 'Yonus', phone: '+91 7010499316' },
+    { name: 'Mithra S', phone: '+91 7010437916' },
+    { name: 'Mohammed Yunus A ', phone: '+91 7010499316' },
   ],
   cybersecurity: [
-    { name: 'Kavya', phone: '+91 8438416749' },
-    { name: 'Dharun vidhyakar', phone: '+918610708272' },
+    { name: 'Kavya S', phone: '+91 8438416749' },
+    { name: 'Dharun vidhyakar S', phone: '+918610708272' },
   ],
   app: [
-    { name: 'Immanuvel', phone: '+91 8825503860' },
-    { name: 'Swathi', phone: '+91 9344876996 '},
+    { name: 'Immanuvel R', phone: '+91 8825503860' },
+    { name: 'jayaSwathi P', phone: '+91 9344876996 '},
   ],
   iot: [
-    { name: 'Nisar', phone: '+919876543217' },
-    { name: 'Rohith', phone: '+91 9842868885' },
+    { name: 'Nisar A', phone: '+919876543217' },
+    { name: 'Rohith C R', phone: '+91 9842868885' },
   ],
 };
 
