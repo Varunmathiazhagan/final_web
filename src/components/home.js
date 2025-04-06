@@ -226,7 +226,7 @@ const Home = () => {
             <div className="mb-16 sm:mb-4 md:mb-6"> {/* Increased bottom margin on mobile */}
               <div className="flex flex-row items-center justify-center space-x-2 sm:space-x-3 md:space-x-4">
                 <img 
-                  src="/image/dai.png" 
+                  src="/image/logo.png" 
                   alt="Kongu Engineering College Logo" 
                   className="h-16 sm:h-14 md:h-20 lg:h-22 object-contain" // Increased mobile size
                 />
@@ -603,7 +603,7 @@ const Home = () => {
             <div className="w-full h-full overflow-auto p-2 md:p-4 overscroll-contain">
               <div className="min-h-full flex items-center justify-center">
                 <img 
-                  src="/image/hii.png" 
+                  src="/image/dai.png" 
                   alt="Hackathon Brochure" 
                   className={`w-full h-auto object-contain transition-opacity duration-300 ${brochureLoaded ? 'opacity-100' : 'opacity-0'}`}
                   style={{ maxHeight: 'none' }} /* Allows image to display at full height */
