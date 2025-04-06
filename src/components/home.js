@@ -226,7 +226,7 @@ const Home = () => {
             <div className="mb-16 sm:mb-4 md:mb-6"> {/* Increased bottom margin on mobile */}
               <div className="flex flex-row items-center justify-center space-x-2 sm:space-x-3 md:space-x-4">
                 <img 
-                  src="/image/logo.png" 
+                  src="/image/dai.png" 
                   alt="Kongu Engineering College Logo" 
                   className="h-16 sm:h-14 md:h-20 lg:h-22 object-contain" // Increased mobile size
                 />
