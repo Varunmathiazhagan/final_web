@@ -245,7 +245,7 @@ const Home = () => {
               {/* "presents by" text */}
               <div className="text-center mb-6 sm:mb-4">
                 <p className="text-base sm:text-lg md:text-xl text-gray-300 font-light">
-                  <span className="italic">presents by</span>
+                  <span className="italic">presented by</span>
                 </p>
                 <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-blue-400 px-4">
                   Department of Information Technology
