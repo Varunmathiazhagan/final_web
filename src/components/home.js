@@ -218,52 +218,77 @@ const Home = () => {
     <div className="min-h-screen relative overflow-hidden bg-black">
       <div ref={mountRef} className="absolute inset-0 z-0" />
 
-      {/* Hero Section */}
-      <section id="home" className="relative z-10 min-h-screen flex items-center justify-center px-4 pt-16">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center space-y-8">
-            {/* Main DevForge heading with gradient animation */}
-            <div>
-              <h1 className="text-6xl md:text-8xl font-black mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 tracking-tight animate-gradient">
-                DevForge
-              </h1>
+      {/* Hero Section - Reduced top padding on mobile */}
+      <section id="home" className="relative z-10 min-h-screen flex items-center justify-center px-4 pt-8 sm:pt-16">
+        <div className="max-w-5xl mx-auto w-full">
+          <div className="text-center space-y-5 sm:space-y-6">
+            {/* College Logo and Name - Reduced spacing for mobile */}
+            <div className="mb-2 sm:mb-4 md:mb-8">
+              <div className="flex flex-row items-center justify-center space-x-2 sm:space-x-3 md:space-x-4">
+                <img 
+                  src="/image/logo.png" 
+                  alt="Kongu Engineering College Logo" 
+                  className="h-14 sm:h-16 md:h-20 lg:h-22 object-contain"
+                />
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-400 to-pink-300 tracking-wide">
+                  Kongu Engineering College
+                </h2>
+              </div>
             </div>
             
-            {/* 30 hrs Hackathon badge with blinking effect */}
+            {/* Main DevForge heading with gradient animation - Tighter spacing on mobile */}
             <div>
-              <div className="inline-block bg-gradient-to-r from-blue-900/40 to-purple-900/40 backdrop-blur-sm rounded-xl px-6 py-3 border border-blue-800/40 shadow-lg shadow-blue-900/20">
-                <h2 className="text-3xl md:text-4xl font-bold animate-pulse">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-1 sm:mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 tracking-tight animate-gradient">
+                DevForge
+              </h1>
+              
+              {/* "presents by" text moved below DevForge with reduced spacing */}
+              <div className="text-center mb-3 sm:mb-6">
+                <p className="text-base sm:text-lg md:text-xl text-gray-300 font-light">
+                  <span className="italic">presents by</span>
+                </p>
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-blue-400 px-4">
+                  Department of Information Technology
+                </p>
+              </div>
+            </div>
+            
+            {/* 30 hrs Hackathon badge with blinking effect - Tighter mobile spacing */}
+            <div>
+              <div className="inline-block bg-gradient-to-r from-blue-900/40 to-purple-900/40 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-2 sm:py-3 border border-blue-800/40 shadow-lg shadow-blue-900/20">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold animate-pulse">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">30 hrs</span>
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500 ml-2">Hackathon</span>
                 </h2>
               </div>
             </div>
             
+            {/* Reduced spacing between elements for mobile */}
             {/* Organization byline with typing animation */}
-            <div className="relative mx-auto max-w-3xl">
-              <p className="text-lg text-gray-300 font-light mb-2 animate-typing">
+            <div className="relative mx-auto max-w-3xl mt-3 sm:mt-6">
+              <p className="text-base sm:text-lg text-gray-300 font-light mb-1 sm:mb-2 animate-typing">
                 Organized by
               </p>
-              <p className="text-xl md:text-2xl text-blue-300 font-medium px- leading-relaxed">
-                Department of Information Technology, IT Association & IT coding club
+              <p className="text-lg sm:text-xl md:text-2xl text-blue-300 font-medium px-2 sm:px-4 leading-relaxed">
+               IT Association & IT Coding Club
               </p>
             </div>
             
-            {/* Motto with gradient animation */}
-            <div className="py-6">
-              <p className="text-2xl md:text-3xl text-blue-400 font-light tracking-wider leading-relaxed animate-gradient">
+            {/* Motto with gradient animation - Reduced padding for mobile */}
+            <div className="py-2 sm:py-4 md:py-6">
+              <p className="text-xl sm:text-2xl md:text-3xl text-blue-400 font-light tracking-wider leading-relaxed animate-gradient px-2">
                 <span className="font-medium">Forge</span> Your Vision · <span className="font-medium">Code</span> The Future · <span className="font-medium">Build</span> With Passion
               </p>
             </div>
             
-            {/* CTA Buttons - Updated for mobile devices */}
-            <div className="flex flex-col sm:flex-row justify-center gap-6 py-8">
+            {/* CTA Buttons - Tighter spacing on mobile */}
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 py-4 sm:py-6 md:py-8">
               <button 
                 onClick={() => setShowBrochure(true)}
-                className={`group relative px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full overflow-hidden transition-all duration-300 transform hover:scale-105 active:scale-95 ${isTouchDevice ? 'mobile-glow animate-mobile-pulse' : 'hover:shadow-xl hover:shadow-blue-500/20'}`}
+                className={`group relative px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full overflow-hidden transition-all duration-300 transform hover:scale-105 active:scale-95 ${isTouchDevice ? 'mobile-glow animate-mobile-pulse' : 'hover:shadow-xl hover:shadow-blue-500/20'}`}
               >
                 <span className="relative z-10 flex items-center justify-center">
-                  <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                   See Brochure 
@@ -461,7 +486,7 @@ const Home = () => {
           </div>
         </div>
         
-        {/* Venue Section */}
+        {/* Venue Section - Corrected spelling and improved formatting */}
         <div className="max-w-5xl mx-auto mt-20 md:mt-28 text-center">
           <div className="inline-block bg-gradient-to-r from-indigo-900/40 to-blue-900/40 backdrop-blur-sm rounded-xl px-6 py-6 border border-indigo-800/40 shadow-lg shadow-indigo-900/20">
             <h4 className="text-2xl md:text-3xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-blue-400">
@@ -469,7 +494,7 @@ const Home = () => {
             </h4>
             <div className="flex flex-col items-center justify-center">
               <p className="text-xl md:text-2xl text-blue-300 font-medium">
-                Srinivasan Ramanajum Seminar Hall
+                Srinivasan Ramanujam Seminar Hall
               </p>
               <p className="text-lg md:text-xl text-gray-300 mt-1">
                 IT Park, Kongu Engineering College
@@ -579,7 +604,7 @@ const Home = () => {
             <div className="w-full h-full overflow-auto p-2 md:p-4 overscroll-contain">
               <div className="min-h-full flex items-center justify-center">
                 <img 
-                  src="/image/brq.png" 
+                  src="/image/hii.png" 
                   alt="Hackathon Brochure" 
                   className={`w-full h-auto object-contain transition-opacity duration-300 ${brochureLoaded ? 'opacity-100' : 'opacity-0'}`}
                   style={{ maxHeight: 'none' }} /* Allows image to display at full height */
