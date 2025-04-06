@@ -218,32 +218,32 @@ const Home = () => {
     <div className="min-h-screen relative overflow-hidden bg-black">
       <div ref={mountRef} className="absolute inset-0 z-0" />
 
-      {/* Hero Section - Reduced top padding on mobile */}
-      <section id="home" className="relative z-10 min-h-screen flex items-center justify-center px-4 pt-8 sm:pt-16">
+      {/* Hero Section */}
+      <section id="home" className="relative z-10 min-h-screen flex flex-col justify-start px-4 pt-4 sm:pt-6 md:pt-16">
         <div className="max-w-5xl mx-auto w-full">
-          <div className="text-center space-y-5 sm:space-y-6">
-            {/* College Logo and Name - Reduced spacing for mobile */}
-            <div className="mb-2 sm:mb-4 md:mb-8">
+          <div className="text-center space-y-8 sm:space-y-5"> {/* Increased base spacing */}
+            {/* College Logo and Name - Increased size */}
+            <div className="mb-16 sm:mb-4 md:mb-6"> {/* Increased bottom margin on mobile */}
               <div className="flex flex-row items-center justify-center space-x-2 sm:space-x-3 md:space-x-4">
                 <img 
                   src="/image/logo.png" 
                   alt="Kongu Engineering College Logo" 
-                  className="h-14 sm:h-16 md:h-20 lg:h-22 object-contain"
+                  className="h-16 sm:h-14 md:h-20 lg:h-22 object-contain" // Increased mobile size
                 />
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-400 to-pink-300 tracking-wide">
+                <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-400 to-pink-300 tracking-wide">
                   Kongu Engineering College
                 </h2>
               </div>
             </div>
             
-            {/* Main DevForge heading with gradient animation - Tighter spacing on mobile */}
-            <div>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-1 sm:mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 tracking-tight animate-gradient">
+            {/* DevForge heading and presents by - Added more spacing */}
+            <div className="mt-16 sm:mt-4"> {/* Increased top margin on mobile */}
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-4 sm:mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 tracking-tight animate-gradient">
                 DevForge
               </h1>
               
-              {/* "presents by" text moved below DevForge with reduced spacing */}
-              <div className="text-center mb-3 sm:mb-6">
+              {/* "presents by" text */}
+              <div className="text-center mb-6 sm:mb-4">
                 <p className="text-base sm:text-lg md:text-xl text-gray-300 font-light">
                   <span className="italic">presents by</span>
                 </p>
@@ -253,8 +253,8 @@ const Home = () => {
               </div>
             </div>
             
-            {/* 30 hrs Hackathon badge with blinking effect - Tighter mobile spacing */}
-            <div>
+            {/* 30 hrs Hackathon badge - Increased spacing */}
+            <div className="mt-12 sm:mt-4"> {/* Increased gap before hackathon badge */}
               <div className="inline-block bg-gradient-to-r from-blue-900/40 to-purple-900/40 backdrop-blur-sm rounded-xl px-4 sm:px-6 py-2 sm:py-3 border border-blue-800/40 shadow-lg shadow-blue-900/20">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold animate-pulse">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">30 hrs</span>
@@ -263,9 +263,8 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Reduced spacing between elements for mobile */}
-            {/* Organization byline with typing animation */}
-            <div className="relative mx-auto max-w-3xl mt-3 sm:mt-6">
+            {/* Organization byline - Increased spacing */}
+            <div className="relative mx-auto max-w-3xl mt-12 sm:mt-6"> {/* Increased gap before organization */}
               <p className="text-base sm:text-lg text-gray-300 font-light mb-1 sm:mb-2 animate-typing">
                 Organized by
               </p>
@@ -274,15 +273,15 @@ const Home = () => {
               </p>
             </div>
             
-            {/* Motto with gradient animation - Reduced padding for mobile */}
-            <div className="py-2 sm:py-4 md:py-6">
+            {/* Motto - Adjusted spacing */}
+            <div className="py-6 sm:py-4 md:py-6 mt-8 sm:mt-4">
               <p className="text-xl sm:text-2xl md:text-3xl text-blue-400 font-light tracking-wider leading-relaxed animate-gradient px-2">
                 <span className="font-medium">Forge</span> Your Vision · <span className="font-medium">Code</span> The Future · <span className="font-medium">Build</span> With Passion
               </p>
             </div>
             
-            {/* CTA Buttons - Tighter spacing on mobile */}
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 py-4 sm:py-6 md:py-8">
+            {/* CTA Buttons - Increased gap between buttons on mobile */}
+            <div className="flex flex-col sm:flex-row justify-center gap-8 sm:gap-4 py-8 sm:py-6 md:py-8 mt-8 sm:mt-4">
               <button 
                 onClick={() => setShowBrochure(true)}
                 className={`group relative px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-full overflow-hidden transition-all duration-300 transform hover:scale-105 active:scale-95 ${isTouchDevice ? 'mobile-glow animate-mobile-pulse' : 'hover:shadow-xl hover:shadow-blue-500/20'}`}
