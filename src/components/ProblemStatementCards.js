@@ -278,7 +278,7 @@ const ProblemStatementCards = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <p className="text-gray-300 text-xs sm:text-sm text-left"><span className="text-blue-300 font-medium">Team Size:</span> 3-4 members (only from same department)</p>
+                  <p className="text-gray-300 text-xs sm:text-sm text-left"><span className="text-blue-300 font-medium">Team Size:</span> 3-4 members (can form team from different department)</p>
                 </div>
                 
                 <div className="flex items-start">
