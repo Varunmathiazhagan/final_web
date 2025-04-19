@@ -36,6 +36,7 @@ const domainCoordinators = {
 const ProblemStatementCards = () => {
   const [selectedDomain, setSelectedDomain] = useState(null);
   const [viewMode, setViewMode] = useState('domains');
+  const [showClosedMessage, setShowClosedMessage] = useState(false);
 
   // Domains data with problems
   const domains = [
@@ -157,6 +158,10 @@ const ProblemStatementCards = () => {
   ];
 
   const handleDomainSelect = (domain) => {
+    if (domain.id === 'app') {
+      setShowClosedMessage(true);
+      return;
+    }
     setSelectedDomain(domain);
     setViewMode('problems');
   };
@@ -164,6 +169,7 @@ const ProblemStatementCards = () => {
   const handleBack = () => {
     setViewMode('domains');
     setSelectedDomain(null);
+    setShowClosedMessage(false);
   };
 
   const renderDomainCards = () => (
@@ -199,36 +205,105 @@ const ProblemStatementCards = () => {
             <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 text-left">{domain.description}</p>
             
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <span className="text-xs sm:text-sm font-medium text-white bg-blue-600/50 backdrop-blur-sm px-3 py-1 sm:px-4 sm:py-1.5 rounded-full shadow-lg shadow-blue-500/30 border border-blue-400/20 animate-pulse">
-                {domain.problems.length} Problem Statements
-              </span>
+              {domain.id === 'app' ? (
+                <span className="text-xs sm:text-sm font-medium text-white bg-red-600/50 backdrop-blur-sm px-3 py-1 sm:px-4 sm:py-1.5 rounded-full shadow-lg shadow-red-500/30 border border-red-400/20">
+                  Registration Closed
+                </span>
+              ) : (
+                <span className="text-xs sm:text-sm font-medium text-white bg-blue-600/50 backdrop-blur-sm px-3 py-1 sm:px-4 sm:py-1.5 rounded-full shadow-lg shadow-blue-500/30 border border-blue-400/20 animate-pulse">
+                  {domain.problems.length} Problem Statements
+                </span>
+              )}
               
               <button 
-                className="flex items-center text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all duration-300 shadow-lg shadow-blue-500/30 group-hover:shadow-xl group-hover:shadow-blue-500/40 animate-[pulse_2s_infinite] text-sm sm:text-base"
+                className={`flex items-center text-white ${
+                  domain.id === 'app' 
+                    ? 'bg-gradient-to-r from-gray-600 to-gray-600 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 animate-[pulse_2s_infinite]'
+                } px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition-all duration-300 shadow-lg shadow-blue-500/30 text-sm sm:text-base`}
                 onClick={(e) => {
                   e.stopPropagation();
                   handleDomainSelect(domain);
                 }}
               >
-                <span className="mr-1 sm:mr-2 font-medium">View Problems</span>
-                <svg 
-                  className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                <span className="mr-1 sm:mr-2 font-medium">
+                  {domain.id === 'app' ? 'Registration Closed' : 'View Problems'}
+                </span>
+                {domain.id !== 'app' && (
+                  <svg 
+                    className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                )}
               </button>
             </div>
           </div>
           
           {/* Glow effect */}
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="absolute inset-0 bg-blue-500/10 rounded-xl"></div>
+            <div className={`absolute inset-0 ${domain.id === 'app' ? 'bg-red-500/10' : 'bg-blue-500/10'} rounded-xl`}></div>
           </div>
         </motion.div>
       ))}
+    </div>
+  );
+  
+  // Add this new function to display closed registration message
+  const renderClosedMessage = () => (
+    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="mb-6 sm:mb-8 flex items-center">
+        <button 
+          onClick={handleBack}
+          className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-full p-2 mr-3 sm:mr-4 transition-colors"
+        >
+          <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white text-left">
+          App Development Domain
+        </h2>
+      </div>
+      
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="relative overflow-hidden rounded-xl backdrop-blur-sm bg-gradient-to-br from-red-900/40 to-gray-900/40 border border-red-500/20 p-6 sm:p-8 text-center"
+      >
+        <div className="mb-6 flex justify-center">
+          <div className="rounded-full bg-red-600/20 p-4 sm:p-6">
+            <svg className="w-12 h-12 sm:w-16 sm:h-16 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+        </div>
+        
+        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Registration Closed</h3>
+        
+        <p className="text-gray-300 text-base sm:text-lg mb-6 max-w-xl mx-auto">
+          We're sorry, but registration for the App Development domain is now closed. 
+          Please choose another domain to participate in the hackathon.
+        </p>
+        
+        <button 
+          onClick={handleBack}
+          className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 text-base sm:text-lg font-medium"
+        >
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Return to Domains
+        </button>
+        
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-bl from-red-500/20 to-transparent -z-10 rounded-bl-full"></div>
+        <div className="absolute bottom-0 left-0 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-tr from-red-500/10 to-transparent -z-10 rounded-tr-full"></div>
+      </motion.div>
     </div>
   );
 
@@ -278,7 +353,7 @@ const ProblemStatementCards = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <p className="text-gray-300 text-xs sm:text-sm text-left"><span className="text-blue-300 font-medium">Team Size:</span> 3-4 members (can form team from different department)</p>
+                  <p className="text-gray-300 text-xs sm:text-sm text-left"><span className="text-blue-300 font-medium">Team Size:</span> 3-4 members (only from same department)</p>
                 </div>
                 
                 <div className="flex items-start">
@@ -499,6 +574,7 @@ const ProblemStatementCards = () => {
         <AnimatePresence mode="wait">
           {viewMode === 'domains' && renderDomainCards()}
           {viewMode === 'problems' && renderProblemsView()}
+          {showClosedMessage && renderClosedMessage()}
         </AnimatePresence>
       </div>
     </div>
