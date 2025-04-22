@@ -408,15 +408,20 @@ const Home = () => {
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-600 via-purple-600 to-pink-600 rounded opacity-70"></div>
           
           <div className="space-y-12 md:space-y-24">
-            {/* Registration Deadline */}
+            {/* Registration Deadline - Updated to show completed */}
             <div className="relative flex flex-col sm:flex-row items-start md:items-center">
-              <div className="absolute left-4 top-6 md:left-1/2 md:top-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full border-4 border-black shadow-lg shadow-blue-500/50 z-10"></div>
+              <div className="absolute left-4 top-6 md:left-1/2 md:top-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-green-500 to-green-700 rounded-full border-4 border-black shadow-lg shadow-green-500/50 z-10 flex items-center justify-center">
+                {/* Added check mark to show completed */}
+                <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
               
               <div className="pl-12 md:pl-0 w-full md:w-1/2 md:pr-8 md:text-right">
-                <div className="bg-gray-900/80 backdrop-blur p-6 rounded-xl border border-gray-800 shadow-lg hover:shadow-blue-500/10 hover:border-blue-900/30 transition-all duration-300">
-                  <span className="inline-block px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-sm mb-3">DEADLINE</span>
-                  <h4 className="text-2xl font-semibold text-blue-400 mb-2">April 20, 2025</h4>
-                  <p className="text-gray-300">Last date for registration - Don't miss your chance to participate!</p>
+                <div className="bg-gray-900/80 backdrop-blur p-6 rounded-xl border border-gray-800 shadow-lg hover:shadow-green-500/10 hover:border-green-900/30 transition-all duration-300">
+                  <span className="inline-block px-3 py-1 bg-green-900/50 text-green-300 rounded-full text-sm mb-3">COMPLETED</span>
+                  <h4 className="text-2xl font-semibold text-green-400 mb-2">April 20, 2025</h4>
+                  <p className="text-gray-300">Registration deadline has passed - All entries are now closed.</p>
                 </div>
               </div>
               
