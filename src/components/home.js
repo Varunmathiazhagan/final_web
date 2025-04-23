@@ -437,7 +437,7 @@ const Home = () => {
               <div className="pl-12 w-full md:w-1/2 md:pl-8 text-left">
                 <div className="bg-gray-900/80 backdrop-blur p-6 rounded-xl border border-gray-800 shadow-lg hover:shadow-cyan-500/10 hover:border-cyan-900/30 transition-all duration-300">
                   <span className="inline-block px-3 py-1 bg-cyan-900/50 text-cyan-300 rounded-full text-sm mb-3">PRELIMS</span>
-                  <h4 className="text-2xl font-semibold text-cyan-400 mb-2">April 23, 2025</h4>
+                  <h4 className="text-2xl font-semibold text-cyan-400 mb-2">April 24, 2025</h4>
                   <p className="text-gray-300">Preliminary rounds to qualify for the main hackathon event</p>
                 </div>
               </div>
